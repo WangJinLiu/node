@@ -1,0 +1,154 @@
+body{
+	background: #edf0f1;
+	padding: 80px 0 0 0;
+}
+header{
+	width: 100%;
+	height: 70px;
+	/*border: 1px solid;*/
+	position: fixed;
+	padding: 12px;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	background: #27b99a;
+	box-shadow: 0px 2px 4px rgba(44,62,80,0.15);
+
+}
+header input{
+	width: 100%;
+	height: 46px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+	text-indent: 18px;
+	/*缩进*/
+	
+	float: left;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 25px;
+	border-top-right-radius: 25px;
+	border:0;
+	outline: none;
+	box-shadow: none;
+	background: rgba(225,255,255,0.2);
+}
+/*改变inputplaceHolder中文字颜色*/
+header input::-webkit-input-placeholder{
+	color:rgba(255,255,255,0.75);
+}
+
+header button{
+	width: 46px;
+	height: 46px;
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	border-radius: 50%;
+	background: white;
+	border: 0;
+	box-shadow: none;
+	outline: none;
+	/*去蓝框*/
+	cursor: pointer;
+}
+header button svg{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -8px 0 0 -8px;
+
+}
+header button svg .fill{
+	fill: #27b99a;
+
+}
+/*内容部分*/
+.container{
+	width: 100%;
+}
+ul.todo{
+	width: 100%;
+
+
+
+}
+ul.todo li{
+	width: 100%;
+	min-height: 50px;
+	font-size: 14px;
+	background: #fff;
+	line-height: 22px;
+	border-radius: 5px;
+	color: #333;
+	font-weight: 500;
+	position: relative;
+	margin: 0 0 10px 0;
+	padding: 14px 0 0 14px;
+	float: left;
+
+
+}
+/*拿出最后一个li*/
+ul.todo li:last-of-type{
+	margin: 0;
+}
+ul.todo li .buttons{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+ul.todo li .buttons button{
+	width: 50px;
+	height: 50px;
+	float: left;
+	background: none;
+	position: relative;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	cursor: pointer;
+}
+.noFill{
+	fill: none;
+}
+ul.todo li .buttons button svg{
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin:-11px 0 0 -11px;
+}
+/*加那条线*/
+ul.todo li .buttons button:last-of-type:before {
+  content:'';
+  width:1px;
+  height:30px;
+  position:absolute;
+  top:10px;
+  left:0;
+  background:#edf0f1;
+}
+ul.todo li .buttons button.complete svg .fill{
+	fill: #27b99a;
+}
+ul.todo li .buttons button.complete svg{
+	border-radius: 50%;
+	border: 1px solid #27b99a;
+	transition:background 0.25s ease;
+}
+ul.todo:not(#completed) li .buttons button.complete svg:hover{
+	background: #27b99a;
+
+}
+ul.todo:not(#completed) li .buttons button.complete svg:hover .fill{
+
+	fill: white;
+
+}
